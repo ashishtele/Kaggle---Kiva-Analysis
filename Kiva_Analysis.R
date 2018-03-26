@@ -83,11 +83,13 @@ for(i in 1:length(colnames(x)))
   countMissing(x[[i]],colnames(x)[i])
 }}
 
+##OR
 
+sapply(Kiva_loan, function(x) sum(is.na(x))) 
 
+library(mice)
 
-
-
+init <- mice(Kiva_loan, maxit = 0)
 
 #Checking missing data
 
